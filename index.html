@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Codes By Dev Kumar Mahur</title>
+
+<!-- Shadow Fight 2-like font -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+
+<style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    html, body {
+        height: 100%;
+        font-family: 'Orbitron', sans-serif;
+        background: black;
+        color: white;
+        overflow: auto;
+    }
+
+    .video-container {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        z-index: 0;
+    }
+
+    .video-container video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .content {
+        position: relative;
+        z-index: 1;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .program {
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        color: black !important;
+        font-size: 2rem;
+        margin-bottom: 5px;
+    }
+
+    a {
+        color: red;
+        text-decoration: none;
+        font-size: 1.2rem;
+        display: inline;
+        padding: 0;
+        line-height: 1;
+    }
+
+    a:hover {
+        color: #ff0000;
+        text-shadow: 0 0 6px red, 0 0 12px red;
+    }
+
+    .music-btn {
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        background: rgba(0, 0, 0, 0.7);
+        border: 2px solid red;
+        color: red;
+        padding: 8px 12px;
+        border-radius: 10px;
+        cursor: pointer;
+        z-index: 2;
+        font-size: 1rem;
+        transition: 0.3s;
+    }
+
+    .music-btn.active {
+        background: red;
+        color: black;
+        text-shadow: 0 0 10px red, 0 0 20px red;
+    }
+
+    @media (max-width: 600px) {
+        h1 {font-size: 1.5rem;}
+        a {font-size: 1rem;}
+        .content {padding: 10px;}
+    }
+</style>
+</head>
+<body>
+
+<div class="video-container">
+    <video autoplay muted loop playsinline>
+        <source src="samurai.mp4" type="video/mp4">
+    </video>
+</div>
+
+<audio id="bg-music" loop preload="auto">
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="music-btn" id="music-btn">🔈</div>
+
+<div class="content">
+    <div class="program">
+        <h1>School Practicals</h1>
+        <a href="https://no-body-0.github.io/CS/">Run the code</a>
+    </div>
+</div>
+
+<script>
+    const audio = document.getElementById('bg-music');
+    const btn = document.getElementById('music-btn');
+    let isPlaying = false; // start OFF
+
+    btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (isPlaying) {
+            audio.pause();
+            btn.textContent = "🔈";
+            btn.classList.remove("active");
+            isPlaying = false;
+        } else {
+            audio.play().then(() => {
+                btn.textContent = "🔊";
+                btn.classList.add("active");
+                isPlaying = true;
+            }).catch(err => console.log("Play error:", err));
+        }
+    });
+
+    // Prevent accidental play on any other click
+    document.addEventListener("click", (e) => {
+        if (e.target !== btn && isPlaying === false) {
+            audio.pause();
+        }
+    });
+</script>
+
+</body>
+</html>
