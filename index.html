@@ -1,222 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Codes By Dev Kumar Mahur</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dev Kumar Mahur's Journey</title>
 
-<!-- Shadow Fight 2-like font -->
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
 
 <style>
-    * {margin: 0; padding: 0; box-sizing: border-box;}
-    html, body {
-        height: 100%;
-        font-family: 'Orbitron', sans-serif;
-        background: black;
-        color: white;
-        overflow: auto;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    .video-container {
-        position: fixed;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
-        z-index: 0;
-    }
+html, body {
+  height: 100%;
+  font-family: 'Orbitron', sans-serif;
+  background: black;
+  color: white;
+  overflow: hidden;
+}
 
-    .video-container video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+/* Background video */
+.video-container {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
 
-    .content {
-        position: relative;
-        z-index: 1;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-    .program {
-        display: inline-block;
-        margin-bottom: 10px;
-    }
+/* Foreground content */
+.content {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+}
 
-    h1 {
-        color: black !important;
-        font-size: 2rem;
-        margin-bottom: 5px;
-    }
+/* Title */
+h1 {
+  font-size: 2rem;
+  color: black;
+  margin-bottom: 5px;
+}
 
-    a {
-        color: red;
-        text-decoration: none;
-        font-size: 1.2rem;
-        display: inline;
-        padding: 0;
-        line-height: 1;
-    }
+/* Link */
+a {
+  color: red;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
 
-    a:hover {
-        color: #ff0000;
-        text-shadow: 0 0 6px red, 0 0 12px red;
-    }
+a:hover {
+  color: #ff0000;
+  text-shadow: 0 0 6px red, 0 0 12px red;
+}
 
-    .music-btn {
-        position: fixed;
-        top: 15px;
-        right: 15px;
-        background: rgba(0, 0, 0, 0.7);
-        border: 2px solid red;
-        color: red;
-        padding: 8px 12px;
-        border-radius: 10px;
-        cursor: pointer;
-        z-index: 2;
-        font-size: 1rem;
-        transition: 0.3s;
-    }
+/* Music button */
+.music-btn {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background: rgba(0,0,0,0.7);
+  border: 2px solid red;
+  color: red;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 2;
+  transition: 0.3s;
+}
 
-    .music-btn.active {
-        background: red;
-        color: black;
-        text-shadow: 0 0 10px red, 0 0 20px red;
-    }
+.music-btn.active {
+  background: red;
+  color: black;
+  text-shadow: 0 0 10px red;
+}
 
-    @media (max-width: 600px) {
-        h1 {font-size: 1.5rem;}
-        a {font-size: 1rem;}
-        .content {padding: 10px;}
-    }
+/* Mobile */
+@media (max-width: 600px) {
+  h1 { font-size: 1.5rem; }
+  a { font-size: 1rem; }
+}
 </style>
 </head>
+
 <body>
 
 <div class="video-container">
-    <video autoplay muted loop playsinline>
-        <source src="samurai.mp4" type="video/mp4">
-    </video>
+  <video autoplay muted loop playsinline>
+    <source src="samurai.mp4" type="video/mp4">
+  </video>
 </div>
 
 <audio id="bg-music" loop preload="auto">
-    <source src="music.mp3" type="audio/mpeg">
+  <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-<div class="music-btn" id="music-btn">🔈</div>
+<div class="music-btn" id="music-btn">🔇</div>
 
 <div class="content">
-    <div class="program">
-        <h1>Program 1</h1>
-        <a href="https://www.onlineide.pro/playground/share/7822d663-97ce-43fa-9e0c-bf137d55cd22">Run the code</a>
-    </div>
-    <div class="program">
-        <h1>Program 2</h1>
-        <a href="https://www.onlineide.pro/playground/share/7b3070a1-df93-4e19-81fb-1541444cfd8c">Run the code</a>
-    </div>
-    <div class="program">
-        <h1>Program 3</h1>
-        <a href="https://www.onlineide.pro/playground/share/0716cb7b-fbe3-46ea-8df0-63b9a330c973">Run the code</a>
-    </div>
-    <div class="program">
-        <h1>Program 4</h1>
-        <a href="https://www.onlineide.pro/playground/share/34d8c61d-0afd-4959-b020-2160798c34ae">Run the code</a>
-    </div>
-    <div class="program">
-        <h1>Program 5</h1>
-        <a href="https://www.onlineide.pro/playground/share/326f49e6-1f02-41b6-8c6c-916099a2ba8d">Run the code</a>
-    </div>
-    <div class="program">
-        <h1>Program 6</h1>
-        <a href="https://www.onlineide.pro/playground/share/665d56ab-6e0c-48e3-94ac-0a9d265734e3">Run the code</a>
-    </div>
-    <div class="program">
-        <h1>Program 7</h1>
-        <a href="https://www.onlineide.pro/playground/share/e8a8210b-9512-4b68-9279-431de68c8832">Run the code</a>
-    </div>
-    <div class="program">
-        <h1>Program 8</h1>
-        <a href="https://www.onlineide.pro/playground/share/d4f780ae-4943-4f56-b91a-1e90007d87f5">Run the code</a>
-    </div>
-    <div class="program">
-        <h1>Program 9</h1>
-        <a href="https://www.onlineide.pro/playground/share/5fb97df0-2ec6-48b8-834b-9cdcaa639343">Run the code</a>
-    </div>
-    <div class="program">
-        <h1>Program 10</h1>
-        <a href="https://www.onlineide.pro/playground/share/e43fcd36-7678-49cb-b1c4-437416be2f7d">Run the code</a>
-    </div>
-    <div class="program">
-        <h1>Program 11</h1>
-        <a href="https://www.onlineide.pro/playground/share/99b28d38-5f99-452d-ae9f-91ee5ea6456d">Run the code</a>
-    </div>
-    <div class="program">
-        <h1>Program 12</h1>
-        <a href="https://www.onlineide.pro/playground/share/ee834c0e-dd11-4773-a8b6-7bb49fce33e6">Run the code</a>
-    </div>
-    <div class="program">
-        <h1>Program 13</h1>
-        <a href="https://www.onlineide.pro/playground/share/305abec2-30be-4917-8d8d-0a83d90f9027">Run the code</a>
-    </div>
-    <div class="program">
-        <h1>Program 14</h1>
-        <a href="https://www.onlineide.pro/playground/share/692297d5-f897-4083-bc82-f2346cac1c6b">Run the code</a>
-    </div>
-    <div class="program">
-        <h1>Program 15</h1>
-        <a href="https://www.onlineide.pro/playground/share/8013519c-9f38-4045-8bb7-78a8ce68fe35">Run the code</a>
-    </div>
-    <div class="program">
-        <h1>Program 16</h1>
-        <a href="https://www.onlineide.pro/playground/share/f3f4917b-ed93-43e3-bf27-72909fbb4ce2">Run the code</a>
-    </div>
-    <div class="program">
-        <h1>Program 17</h1>
-        <a href="https://www.onlineide.pro/playground/share/de68171a-5a41-464a-be67-577f458857cf">Run the code</a>
-    </div>
-    <div class="program">
-        <h1>Program 18</h1>
-        <a href="https://www.onlineide.pro/playground/share/6559f706-79d8-4f04-afd3-87ec324c4ee3">Run the code</a>
-    </div>
-    <div class="program">
-        <h1>Program 19</h1>
-        <a href="https://www.onlineide.pro/playground/share/38ad8bbc-912f-49f1-91e5-c95623e9c52a">Run the code</a>
-    </div>
-    <div class="program">
-        <h1>Program 20</h1>
-        <a href="https://www.onlineide.pro/playground/share/617d8434-c86d-44b2-a175-80cdd6b0d86a">Run the code</a>
-    </div>
+  <h1>School Practicals</h1>
+  <a href="https://no-body-0.github.io/CS/">View</a>
 </div>
 
 <script>
-    const audio = document.getElementById('bg-music');
-    const btn = document.getElementById('music-btn');
-    let isPlaying = false; // start OFF
+const audio = document.getElementById("bg-music");
+const btn = document.getElementById("music-btn");
+let playing = false;
 
-    btn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        if (isPlaying) {
-            audio.pause();
-            btn.textContent = "🔈";
-            btn.classList.remove("active");
-            isPlaying = false;
-        } else {
-            audio.play().then(() => {
-                btn.textContent = "🔊";
-                btn.classList.add("active");
-                isPlaying = true;
-            }).catch(err => console.log("Play error:", err));
-        }
-    });
+btn.addEventListener("click", e => {
+  e.stopPropagation();
 
-    // Prevent accidental play on any other click
-    document.addEventListener("click", (e) => {
-        if (e.target !== btn && isPlaying === false) {
-            audio.pause();
-        }
-    });
+  if (playing) {
+    audio.pause();
+    btn.textContent = "🔇";
+    btn.classList.remove("active");
+  } else {
+    audio.play().then(() => {
+      btn.textContent = "🔊";
+      btn.classList.add("active");
+      playing = true;
+    }).catch(err => console.log(err));
+    return;
+  }
+  playing = false;
+});
 </script>
 
 </body>
